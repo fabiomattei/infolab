@@ -1,0 +1,24 @@
+{
+  "name": "smallarticlestable",
+  "metadata": { "type":"table", "version": "1" },
+  "allowedgroups": [ "author" ],
+  "get": {
+    "request": {
+      "parameters": []
+    },
+    "query": {
+      "sql": "SELECT id, title, SUBSTRING(description, 1, 50) descriptionshort, created FROM articles;"
+    },
+    "table": {
+      "title": "",
+      "fields": [
+          {"headline": "Title", "sqlfield": "title"},
+          {"headline": "Description", "sqlfield": "descriptionshort"},
+          {"headline": "Date", "sqlfield": "created"}
+      ],
+      "actions": [
+        {"label": "Info", "action": "entityinfo", "resource": "articleinfov1", "parameters":[{"name": "id", "sqlfield": "id"}] }
+      ]
+    }
+  }
+}
