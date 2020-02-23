@@ -1,0 +1,28 @@
+{
+    "name": "fabiomattei/ud-demo",
+    "description": "Demo app for uglyduckling framework",
+    "keywords": ["template", "design", "software"],
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Fabio Mattei",
+            "email": "burattino@gmail.com"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "7.3.0",
+            "ext-gd": "2"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "fabiomattei/uglyduckling": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fabiom\\UDDemo\\": "src/"
+        }
+    }
+}
