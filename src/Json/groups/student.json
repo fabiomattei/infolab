@@ -2,7 +2,7 @@
   "name": "student",
   "metadata": { "type":"group", "version": "1" },
   "home": { "label":"My app", "action":"#" },
-  "defaultaction": "articlestable",
+  "defaultaction": "submissionsdashboards",
   "home": { "label":"My app", "action":"#" },
   "menu": [
     { "label":"Home", "action":"entitytable", "resource":"articlestable" },

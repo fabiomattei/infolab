@@ -1,0 +1,21 @@
+{
+  "name": "submissionslist",
+  "metadata": { "type":"table", "version": "1" },
+  "allowedgroups": [ "student", "teacher" ],
+  "get": {
+    "request": {
+      "parameters": []
+    },
+    "query": {
+      "sql": "SELECT sb_id, sb_name, sb_date FROM submission;"
+    },
+    "table": {
+      "title": "",
+      "fields": [
+          {"headline": "Name", "sqlfield": "sb_name"},
+          {"headline": "Date", "sqlfield": "sb_date"}
+      ],
+      "actions": []
+    }
+  }
+}

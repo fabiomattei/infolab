@@ -1,0 +1,9 @@
+{ 
+  "name": "submissionsdashboards",
+  "metadata": { "type":"dashboard", "version": "1" },
+  "allowedgroups": [ "student", "teacher" ],
+  "title":"Main page",
+  "panels":[
+    { "title":"My submissions", "resource":"submissionslist", "row":"1", "width":"9" }
+  ]
+}
