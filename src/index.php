@@ -19,13 +19,13 @@ $setup->setPrivateTemplateWithSidebarFileName('applicationwithsidebar');
 $setup->setPublicTemplateFileName('public');
 $setup->setEmptyTemplateFileName('empty');
 $setup->setBasePath('http://localhost:18080/');
-$setup->setPathToApp('/uglyduckling/');
+$setup->setPathToApp('/infolab/');
 $setup->setJsonPath('Json/index.json');
 $setup->setHTMLTemplatePath('../vendor/fabiomattei/uglyduckling/src/Templates/');
 
 $dbconnection = new Fabiom\UglyDuckling\Common\Database\DBConnection( 
 	'mysql:host=mariadb:3306;dbname=',
-	'firststep',
+	'infolabdb',
 	'user',
 	'userp'
 );

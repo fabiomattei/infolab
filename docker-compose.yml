@@ -1,0 +1,48 @@
+version: "3"
+services:
+
+  phpinfo:
+    build: ./
+    container_name: infolab-php
+    ports:
+      - "18080:80"
+    networks:
+      - infolabnet
+    volumes:
+      - .:/var/www/html
+    links:
+      - mariadb
+
+  mariadb:
+    build: ./docker/mariadb
+    container_name: infolab-mariadb
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "13306:3306"
+    networks:
+      - infolabnet
+    environment:
+      - MYSQL_DATABASE=infolabdb
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=userp
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: infolab-phpmyadmin
+    links:
+      - mariadb
+    ports:
+      - 8183:80
+    networks:
+      - infolabnet
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: user
+      PMA_PASSWORD: userp
+      PMA_ARBITRARY: 1
+
+networks:
+    infolabnet:
+        driver: bridge
