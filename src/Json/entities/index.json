@@ -2,6 +2,7 @@
   "name": "index",
   "metadata": { "type":"index", "version": "1" },
   "scripts": [
-    { "path":"./Json/entities/submission.json", "type":"entity", "name":"submission" },
+    { "path":"./Json/entities/schoolclass.json", "type":"entity", "name":"schoolclass" },
+    { "path":"./Json/entities/submission.json", "type":"entity", "name":"submission" }
   ]
 }
