@@ -7,8 +7,8 @@
     "tablename": "schoolclass",
     "primary":"sc_id",
     "fields": [
-		{ "name":"sc_id" },
-        { "name":"sc_name" }
+		  { "name":"sc_id" },
+      { "name":"sc_name" }
     ]
   }
 }

@@ -7,9 +7,10 @@
     "primary": "at_id",
     "fields": [
 	    { "name":"at_id" },
+      { "name":"at_sbid" },
       { "name":"at_name" },
       { "name":"at_date" },
-      { "name":"sb_body" }
+      { "name":"at_body" }
     ]
   }
 }
