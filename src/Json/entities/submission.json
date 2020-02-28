@@ -4,18 +4,12 @@
   "entity": {
     "title": "Submission",
     "tablename": "submission",
-	"engine": "InnoDB DEFAULT",
-	"charset": "utf8",
-	"collate": "utf8_bin",
+    "primary":"id",
     "fields": [
-		{ "type":"int(10) UNSIGNED NOT NULL", "name":"id" },
-        { "type":"VARCHAR(255)", "name":"name" },
-        { "type":"INT", "name":"amount" },
-        { "type":"DATE", "name":"duedate" }
-    ],
-	"primary":"id",
-	"alter": [
-		{ "type":"int(10) UNSIGNED NOT NULL AUTO_INCREMENT", "name":"id" }
-	]
+		  { "name":"id" },
+      { "name":"name" },
+      { "name":"amount" },
+      { "name":"duedate" }
+    ]
   }
 }

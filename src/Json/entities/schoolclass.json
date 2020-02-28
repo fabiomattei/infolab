@@ -5,18 +5,10 @@
   "entity": {
     "title": "School Class",
     "tablename": "schoolclass",
-	"engine": "InnoDB DEFAULT",
-	"charset": "utf8",
-	"collate": "utf8_bin",
+    "primary":"sc_id",
     "fields": [
-		{ "type":"int(10) UNSIGNED NOT NULL", "name":"id" },
-        { "type":"VARCHAR(255)", "name":"name" },
-        { "type":"INT", "name":"amount" },
-        { "type":"DATE", "name":"duedate" }
-    ],
-	"primary":"id",
-	"alter": [
-		{ "type":"int(10) UNSIGNED NOT NULL AUTO_INCREMENT", "name":"id" }
-	]
+		{ "name":"sc_id" },
+        { "name":"sc_name" }
+    ]
   }
 }
