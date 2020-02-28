@@ -1,0 +1,15 @@
+{ 
+  "name": "attachment",
+  "metadata": { "type":"entity", "version": "1" },
+  "entity": {
+    "title": "Attachment",
+    "tablename": "attachment",
+    "primary": "at_id",
+    "fields": [
+	  { "name":"at_id" },
+      { "name":"at_name" },
+      { "name":"at_date" },
+      { "name":"sb_body" }
+    ]
+  }
+}

@@ -4,12 +4,12 @@
   "entity": {
     "title": "Submission",
     "tablename": "submission",
-    "primary":"id",
+    "primary":"sb_id",
     "fields": [
-		  { "name":"id" },
-      { "name":"name" },
-      { "name":"amount" },
-      { "name":"duedate" }
+		  { "name":"sb_id" },
+      { "name":"sb_name" },
+      { "name":"sb_date" },
+      { "name":"sb_body" }
     ]
   }
 }
