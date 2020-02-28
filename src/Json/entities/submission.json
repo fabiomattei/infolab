@@ -6,7 +6,7 @@
     "tablename": "submission",
     "primary":"sb_id",
     "fields": [
-		  { "name":"sb_id" },
+      { "name":"sb_id" },
       { "name":"sb_name" },
       { "name":"sb_date" },
       { "name":"sb_body" }

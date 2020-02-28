@@ -2,6 +2,7 @@
   "name": "index",
   "metadata": { "type":"index", "version": "1" },
   "scripts": [
-    { "path":"./Json/submission/submissionsdashboards.json", "type":"export", "name":"submissionsdashboards" }
+    { "path":"./Json/submission/submissionsdashboards.json", "type":"export", "name":"submissionsdashboards" },
+    { "path":"./Json/submission/submissionslist.json", "type":"table", "name":"submissionslist" }
   ]
 }
