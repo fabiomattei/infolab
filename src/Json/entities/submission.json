@@ -10,6 +10,15 @@
       { "name":"sb_name" },
       { "name":"sb_date" },
       { "name":"sb_body" }
+    ],
+    "sqlcreate": "",
+    "sqldrop": "",
+    "sqlsalter": [
+      {
+         "version":"1",
+         "sqlalter":"",
+         "date":"2020-02-28"
+      }
     ]
   }
 }
