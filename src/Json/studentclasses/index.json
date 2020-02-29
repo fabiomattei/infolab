@@ -1,0 +1,8 @@
+{
+  "name": "index",
+  "metadata": { "type":"index", "version": "1" },
+  "scripts": [
+    { "path":"./Json/studentclasses/submissionsdashboards.json", "type":"table", "name":"classeslist" },
+    { "path":"./Json/studentclasses/submissionslist.json", "type":"table", "name":"studentlistbyclasses" }
+  ]
+}
