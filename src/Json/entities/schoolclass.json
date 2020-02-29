@@ -1,5 +1,4 @@
-
-{ 
+{
   "name": "schoolclass",
   "metadata": { "type":"entity", "version": "1" },
   "entity": {

@@ -1,0 +1,14 @@
+{
+  "name": "studentsubmission",
+  "metadata": { "type":"entity", "version": "1" },
+  "entity": {
+    "title": "student-submission",
+    "tablename": "studentsubmission",
+    "primary":"ss_id",
+    "fields": [
+      { "name":"ss_id" },
+      { "name":"ss_userid", "description":"FK to entity user" },
+      { "name":"ss_sbid", "description":"FK to entity submission" }
+    ]
+  }
+}

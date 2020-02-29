@@ -7,13 +7,12 @@
       "parameters": []
     },
     "query": {
-      "sql": "SELECT sb_id, sb_name, sb_date FROM submission;"
+      "sql": "SELECT sc_id, sc_name FROM schoolclass;"
     },
     "table": {
       "title": "",
       "fields": [
-          {"headline": "Name", "sqlfield": "sb_name"},
-          {"headline": "Date", "sqlfield": "sb_date"}
+          {"headline": "Name", "sqlfield": "sc_name"}
       ],
       "actions": []
     }

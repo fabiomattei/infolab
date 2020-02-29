@@ -4,6 +4,7 @@
   "scripts": [
     { "path":"./Json/entities/attachment.json", "type":"entity", "name":"attachment" },
     { "path":"./Json/entities/schoolclass.json", "type":"entity", "name":"schoolclass" },
+    { "path":"./Json/entities/studentsubmission.json", "type":"entity", "name":"studentsubmission" },
     { "path":"./Json/entities/submission.json", "type":"entity", "name":"submission" }
   ]
 }
