@@ -23,11 +23,20 @@
     },
     "transactions": [
       {
+		"label":"submissioninsert",
         "sql":"INSERT INTO submission ( sb_name, sb_date, sb_body, sb_updated, sb_created ) VALUES ( :name, :body, :date, NOW(), NOW() );",
         "parameters":[
           { "type":"string", "placeholder": ":name", "postparameter": "sb_name" },
           { "type":"long", "placeholder": ":body", "postparameter": "sb_body" },
 		  { "type":"long", "placeholder": ":date", "postparameter": "sb_date" }
+        ]
+      },
+      {
+		"label":"studentsubmissioninsert",
+        "sql":"INSERT INTO studentsubmission ( ss_userid, ss_sbid, ss_updated, ss_created ) VALUES ( :userid, :submissionid, NOW(), NOW() );",
+        "parameters":[
+          { "type":"string", "placeholder": ":userid", "sessionparameter": "userid" },
+          { "type":"long", "placeholder": ":submissionid", "returnedid": "submissioninsert" }
         ]
       }
     ]
