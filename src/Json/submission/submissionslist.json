@@ -10,7 +10,7 @@
       "sql": "SELECT sb_id, sb_name, sb_date FROM submission;"
     },
     "table": {
-      "title": "",
+      "title": "My submissions",
       "fields": [
           {"headline": "Name", "sqlfield": "sb_name"},
           {"headline": "Date", "sqlfield": "sb_date"}

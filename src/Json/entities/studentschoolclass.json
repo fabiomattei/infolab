@@ -1,0 +1,15 @@
+{
+  "name": "studentschoolclass",
+  "description": "This entity creates a link between the user entity and the submission entity",
+  "metadata": { "type":"entity", "version": "1" },
+  "entity": {
+    "title": "student-schoolclass",
+    "tablename": "studentschoolclass",
+    "primary":"ssc_id",
+    "fields": [
+      { "name":"ssc_id" },
+      { "name":"ssc_userid", "description":"FK to entity user" },
+      { "name":"ssc_scid", "description":"FK to entity schoolclass" }
+    ]
+  }
+}

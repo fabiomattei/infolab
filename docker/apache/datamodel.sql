@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Creato il: Feb 29, 2020 alle 17:28
+-- Creato il: Mar 01, 2020 alle 10:37
 -- Versione del server: 10.4.10-MariaDB-1:10.4.10+maria~bionic
--- Versione PHP: 7.2.13
+-- Versione PHP: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,13 +29,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `attachment` (
-                              `at_id` int(10) UNSIGNED NOT NULL,
-                              `at_sbid` int(10) UNSIGNED NOT NULL,
-                              `at_name` varchar(255) NOT NULL,
-                              `at_date` date NOT NULL,
-                              `at_body` blob NOT NULL,
-                              `at_updated` datetime NOT NULL,
-                              `at_created` datetime NOT NULL
+  `at_id` int(10) UNSIGNED NOT NULL,
+  `at_sbid` int(10) UNSIGNED NOT NULL,
+  `at_name` varchar(255) NOT NULL,
+  `at_date` date NOT NULL,
+  `at_body` blob NOT NULL,
+  `at_updated` datetime NOT NULL,
+  `at_created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -45,10 +45,24 @@ CREATE TABLE `attachment` (
 --
 
 CREATE TABLE `schoolclass` (
-                               `sc_id` int(11) UNSIGNED NOT NULL,
-                               `sc_name` int(11) NOT NULL,
-                               `sc_updated` datetime NOT NULL,
-                               `sc_created` datetime NOT NULL
+  `sc_id` int(11) UNSIGNED NOT NULL,
+  `sc_name` int(11) NOT NULL,
+  `sc_updated` datetime NOT NULL,
+  `sc_created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `studentschoolclass`
+--
+
+CREATE TABLE `studentschoolclass` (
+  `ssc_id` int(10) UNSIGNED NOT NULL,
+  `ssc_userid` int(10) UNSIGNED NOT NULL,
+  `ssc_scid` int(10) UNSIGNED NOT NULL,
+  `ssc_updated` datetime NOT NULL,
+  `ssc_created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -58,11 +72,11 @@ CREATE TABLE `schoolclass` (
 --
 
 CREATE TABLE `studentsubmission` (
-                                     `ss_id` int(10) UNSIGNED NOT NULL,
-                                     `ss_userid` int(10) UNSIGNED NOT NULL,
-                                     `ss_sbid` int(10) UNSIGNED NOT NULL,
-                                     `ss_updated` datetime NOT NULL,
-                                     `ss_created` datetime NOT NULL
+  `ss_id` int(10) UNSIGNED NOT NULL,
+  `ss_userid` int(10) UNSIGNED NOT NULL,
+  `ss_sbid` int(10) UNSIGNED NOT NULL,
+  `ss_updated` datetime NOT NULL,
+  `ss_created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -72,12 +86,12 @@ CREATE TABLE `studentsubmission` (
 --
 
 CREATE TABLE `submission` (
-                              `sb_id` int(11) UNSIGNED NOT NULL,
-                              `sb_name` varchar(255) NOT NULL,
-                              `sb_date` date NOT NULL,
-                              `sb_body` text NOT NULL,
-                              `sb_updated` datetime NOT NULL,
-                              `sb_created` datetime NOT NULL
+  `sb_id` int(11) UNSIGNED NOT NULL,
+  `sb_name` varchar(255) NOT NULL,
+  `sb_date` date NOT NULL,
+  `sb_body` text NOT NULL,
+  `sb_updated` datetime NOT NULL,
+  `sb_created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -87,15 +101,15 @@ CREATE TABLE `submission` (
 --
 
 CREATE TABLE `user` (
-                        `usr_id` bigint(20) NOT NULL,
-                        `usr_defaultgroup` varchar(80) CHARACTER SET utf8 NOT NULL DEFAULT '',
-                        `usr_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-                        `usr_surname` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-                        `usr_email` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-                        `usr_hashedpsw` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-                        `usr_password_updated` datetime NOT NULL,
-                        `usr_updated` datetime NOT NULL,
-                        `usr_created` datetime NOT NULL
+  `usr_id` bigint(20) NOT NULL,
+  `usr_defaultgroup` varchar(80) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `usr_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `usr_surname` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `usr_email` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `usr_hashedpsw` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `usr_password_updated` datetime NOT NULL,
+  `usr_updated` datetime NOT NULL,
+  `usr_created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -118,11 +132,11 @@ INSERT INTO `user` (`usr_id`, `usr_defaultgroup`, `usr_name`, `usr_surname`, `us
 --
 
 CREATE TABLE `usergroup` (
-                             `ug_id` int(10) UNSIGNED NOT NULL,
-                             `ug_groupslug` varchar(80) COLLATE utf8_bin NOT NULL DEFAULT '',
-                             `ug_userid` int(11) UNSIGNED NOT NULL DEFAULT 0,
-                             `ug_updated` datetime NOT NULL,
-                             `ug_created` datetime NOT NULL
+  `ug_id` int(10) UNSIGNED NOT NULL,
+  `ug_groupslug` varchar(80) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `ug_userid` int(11) UNSIGNED NOT NULL DEFAULT 0,
+  `ug_updated` datetime NOT NULL,
+  `ug_created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -143,37 +157,43 @@ INSERT INTO `usergroup` (`ug_id`, `ug_groupslug`, `ug_userid`, `ug_updated`, `ug
 -- Indici per le tabelle `attachment`
 --
 ALTER TABLE `attachment`
-    ADD PRIMARY KEY (`at_id`);
+  ADD PRIMARY KEY (`at_id`);
 
 --
 -- Indici per le tabelle `schoolclass`
 --
 ALTER TABLE `schoolclass`
-    ADD PRIMARY KEY (`sc_id`);
+  ADD PRIMARY KEY (`sc_id`);
+
+--
+-- Indici per le tabelle `studentschoolclass`
+--
+ALTER TABLE `studentschoolclass`
+  ADD PRIMARY KEY (`ssc_id`);
 
 --
 -- Indici per le tabelle `studentsubmission`
 --
 ALTER TABLE `studentsubmission`
-    ADD PRIMARY KEY (`ss_id`);
+  ADD PRIMARY KEY (`ss_id`);
 
 --
 -- Indici per le tabelle `submission`
 --
 ALTER TABLE `submission`
-    ADD PRIMARY KEY (`sb_id`);
+  ADD PRIMARY KEY (`sb_id`);
 
 --
 -- Indici per le tabelle `user`
 --
 ALTER TABLE `user`
-    ADD PRIMARY KEY (`usr_id`);
+  ADD PRIMARY KEY (`usr_id`);
 
 --
 -- Indici per le tabelle `usergroup`
 --
 ALTER TABLE `usergroup`
-    ADD PRIMARY KEY (`ug_id`);
+  ADD PRIMARY KEY (`ug_id`);
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
@@ -183,37 +203,43 @@ ALTER TABLE `usergroup`
 -- AUTO_INCREMENT per la tabella `attachment`
 --
 ALTER TABLE `attachment`
-    MODIFY `at_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `at_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `schoolclass`
 --
 ALTER TABLE `schoolclass`
-    MODIFY `sc_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `sc_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `studentschoolclass`
+--
+ALTER TABLE `studentschoolclass`
+  MODIFY `ssc_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `studentsubmission`
 --
 ALTER TABLE `studentsubmission`
-    MODIFY `ss_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ss_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `submission`
 --
 ALTER TABLE `submission`
-    MODIFY `sb_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `sb_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `user`
 --
 ALTER TABLE `user`
-    MODIFY `usr_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `usr_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT per la tabella `usergroup`
 --
 ALTER TABLE `usergroup`
-    MODIFY `ug_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ug_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

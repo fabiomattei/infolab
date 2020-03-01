@@ -4,6 +4,7 @@
   "allowedgroups": [ "student", "teacher" ],
   "title":"Main page",
   "panels":[
-    { "title":"My submissions", "resource":"submissionslist", "row":"1", "width":"9" }
+    { "title":"", "resource":"submissionslist", "row":"1", "width":"8" },
+	{ "title":"", "resource":"newsubmissionform", "row":"1", "width":"4" }
   ]
 }

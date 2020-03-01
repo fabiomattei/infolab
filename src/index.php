@@ -13,7 +13,7 @@ $messagesBlock = new Fabiom\UglyDuckling\Common\Blocks\BaseHTMLMessages();
 $messagesBlock->setHtmlTemplateLoader( $htmlTemplateLoader );
 
 $setup = new Fabiom\UglyDuckling\Common\Setup\Setup();
-$setup->setAppNameForPageTitle("Try app");
+$setup->setAppNameForPageTitle("Info lab");
 $setup->setPrivateTemplateFileName('application');
 $setup->setPrivateTemplateWithSidebarFileName('applicationwithsidebar');
 $setup->setPublicTemplateFileName('public');
