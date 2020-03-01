@@ -6,8 +6,9 @@
     "form": {
       "title": "New submission",
       "fields": [
-        { "type":"textfield", "name":"title", "label":"Title", "placeholder":"title", "width":"12", "row":"1" },
-        { "type":"textarea", "name":"description", "label":"Description", "placeholder":"Description", "width":"12", "row":"2" },
+        { "type":"textfield", "name":"sb_name", "label":"Title", "placeholder":"title", "width":"12", "row":"1" },
+        { "type":"textarea", "name":"sb_body", "label":"Description", "placeholder":"Description", "width":"12", "row":"2" },
+		{ "type":"date", "name":"sb_date", "label":"Date", "placeholder":"", "width":"12", "row":"2" },
         { "type": "submitbutton", "width":"2", "row":"3", "name": "Save", "constantparameter": "Save" }
       ]
     }
@@ -15,16 +16,18 @@
   "post": {
     "request": {
       "postparameters": [
-        { "name":"title", "validation":"required|max_len,250" },
-        { "name":"description", "validation":"alpha_numeric" }
+        { "name":"sb_name", "validation":"required|max_len,250" },
+        { "name":"sb_body", "validation":"alpha_numeric" },
+		{ "name":"sb_date", "validation":"calendardate" }
       ]
     },
     "transactions": [
       {
-        "sql":"INSERT INTO articles ( title, description, updated, created ) VALUES ( :title, :description, NOW(), NOW() );",
+        "sql":"INSERT INTO submission ( sb_name, sb_date, sb_body, sb_updated, sb_created ) VALUES ( :name, :body, :date, NOW(), NOW() );",
         "parameters":[
-          { "type":"string", "placeholder": ":title", "postparameter": "title" },
-          { "type":"long", "placeholder": ":description", "postparameter": "description" }
+          { "type":"string", "placeholder": ":name", "postparameter": "sb_name" },
+          { "type":"long", "placeholder": ":body", "postparameter": "sb_body" },
+		  { "type":"long", "placeholder": ":date", "postparameter": "sb_date" }
         ]
       }
     ]
