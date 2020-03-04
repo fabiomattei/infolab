@@ -9,7 +9,8 @@
         { "type":"textfield", "name":"sb_name", "label":"Title", "placeholder":"title", "width":"12", "row":"1" },
         { "type":"textarea", "name":"sb_body", "label":"Description", "placeholder":"Description", "width":"12", "row":"2" },
 		{ "type":"date", "name":"sb_date", "label":"Date", "placeholder":"", "width":"12", "row":"2" },
-        { "type": "submitbutton", "width":"2", "row":"3", "name": "Save", "constantparameter": "Save" }
+        { "type":"file", "name":"sb_file", "label":"File", "placeholder":"", "width":"12", "row":"2" },
+        { "type":"submitbutton", "width":"2", "row":"3", "name": "Save", "constantparameter": "Save" }
       ]
     }
   },
@@ -18,17 +19,19 @@
       "postparameters": [
         { "name":"sb_name", "validation":"required|max_len,250" },
         { "name":"sb_body", "validation":"alpha_numeric" },
-		{ "name":"sb_date", "validation":"calendardate" }
+		{ "name":"sb_date", "validation":"calendardate" },
+        { "name":"sb_file", "validation":"required_file|extension,png;jpg" }
       ]
     },
     "transactions": [
       {
 		"label":"submissioninsert",
-        "sql":"INSERT INTO submission ( sb_name, sb_date, sb_body, sb_updated, sb_created ) VALUES ( :name, :date, :body, NOW(), NOW() );",
+        "sql":"INSERT INTO submission ( sb_name, sb_date, sb_body, sb_file, sb_filemime, sb_filesize, sb_filename, sb_updated, sb_created ) VALUES ( :name, :date, :body, :file, :filemime, :filesize, :filename, NOW(), NOW() );",
         "parameters":[
           { "type":"string", "placeholder": ":name", "postparameter": "sb_name" },
           { "type":"long", "placeholder": ":body", "postparameter": "sb_body" },
-		  { "type":"long", "placeholder": ":date", "postparameter": "sb_date" }
+		  { "type":"long", "placeholder": ":date", "postparameter": "sb_date" },
+          { "type":"file", "placeholder": ":file", "fileparameter": "sb_file" }
         ]
       },
       {
