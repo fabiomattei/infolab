@@ -26,7 +26,7 @@
     "transactions": [
       {
 		"label":"submissioninsert",
-        "sql":"INSERT INTO submission ( sb_name, sb_date, sb_body, sb_file, sb_filemime, sb_filesize, sb_filename, sb_fileerror, sb_updated, sb_created ) VALUES ( :name, :date, :body, :file, :filemime, :filesize, :filename, :error,  NOW(), NOW() );",
+        "sql":"INSERT INTO submission ( sb_name, sb_date, sb_body, sb_file, sb_filemime, sb_filesize, sb_filename, sb_fileerror, sb_updated, sb_created ) VALUES ( :name, :date, :body, :file, :filemime, :filesize, :filename, :fileerror,  NOW(), NOW() );",
         "parameters":[
           { "type":"string", "placeholder": ":name", "postparameter": "sb_name" },
           { "type":"long", "placeholder": ":body", "postparameter": "sb_body" },
